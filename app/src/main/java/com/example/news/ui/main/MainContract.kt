@@ -1,18 +1,13 @@
 package com.example.news.ui.main
 
-import androidx.lifecycle.LiveData
-import com.example.news.data.model.news.NewsModel
 import com.example.news.ui.LiveCycle
 
 interface MainContract {
 
-    interface View{
-        fun fillView(result: NewsModel?)
+    interface View {
     }
 
-    interface Presenter:LiveCycle<View>{
-        fun getBusinessNews()
-        fun getSavedData(): LiveData<List<NewsModel>>?
-
+    interface Presenter : LiveCycle<View> {
+        fun reset()
     }
 }

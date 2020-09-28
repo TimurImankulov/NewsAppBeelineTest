@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.NewsArticleActivity">
+    tools:context=".ui.newsditails.NewsArticleActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutTop"
@@ -53,63 +53,53 @@
             app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
         <TextView
-            android:id="@+id/tvAuthor"
+            android:id="@+id/tvContent"
+            style="@style/textViewPrimary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/tvDesc"
+            app:layout_constraintTop_toBottomOf="@id/tvDesc" />
+
+        <TextView
+            android:id="@+id/tvAuthor"
             style="@style/textViewPrimary"
-            app:layout_constraintTop_toBottomOf="@id/tvDesc"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvContent" />
 
         <TextView
             android:id="@+id/tvSource"
+            style="@style/textViewPrimary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/textViewPrimary"
             app:layout_constraintStart_toStartOf="@id/tvAuthor"
             app:layout_constraintTop_toBottomOf="@id/tvAuthor" />
 
         <TextView
             android:id="@+id/tvURL"
+            style="@style/textViewPrimary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/textViewPrimary"
             app:layout_constraintStart_toStartOf="@id/tvSource"
             app:layout_constraintTop_toBottomOf="@id/tvSource" />
 
-
         <TextView
             android:id="@+id/tvURLTolmage"
+            style="@style/textViewPrimary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/textViewPrimary"
             app:layout_constraintStart_toStartOf="@id/tvURL"
             app:layout_constraintTop_toBottomOf="@id/tvURL" />
 
         <TextView
             android:id="@+id/tvPublishedAt"
+            style="@style/textViewPrimary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/textViewPrimary"
             app:layout_constraintStart_toStartOf="@id/tvURLTolmage"
             app:layout_constraintTop_toBottomOf="@id/tvURLTolmage" />
 
-        <TextView
-            android:id="@+id/tvContent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/textViewPrimary"
-            app:layout_constraintStart_toStartOf="@id/tvPublishedAt"
-            app:layout_constraintTop_toBottomOf="@id/tvPublishedAt" />
-
-
-
-
-
-
-
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

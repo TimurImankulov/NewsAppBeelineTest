@@ -16,4 +16,3 @@ interface NewsService {
 
 }
 
-//http://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=512fac0f6c1f42a8984d0f1d8bb74733

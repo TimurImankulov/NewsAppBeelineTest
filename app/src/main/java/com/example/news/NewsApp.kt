@@ -13,7 +13,7 @@ class NewsApp : Application() {
 
         app = this
 
-          db = Room.databaseBuilder(applicationContext, AppDataBase::class.java, DB_NAME)
+        db = Room.databaseBuilder(applicationContext, AppDataBase::class.java, DB_NAME)
             .allowMainThreadQueries()
             .build()
     }
