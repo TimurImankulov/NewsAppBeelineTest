@@ -35,6 +35,17 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/layoutTop">
 
+        <ImageView
+            android:id="@+id/ivURLTolmage"
+            android:layout_width="350dp"
+            android:layout_height="150dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
+
         <TextView
             android:id="@+id/tvTitle"
             style="@style/textViewPrimary"
@@ -42,7 +53,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/ivURLTolmage" />
 
         <TextView
             android:id="@+id/tvDesc"
@@ -85,20 +96,12 @@
             app:layout_constraintTop_toBottomOf="@id/tvSource" />
 
         <TextView
-            android:id="@+id/tvURLTolmage"
+            android:id="@+id/tvPublishedAt"
             style="@style/textViewPrimary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="@id/tvURL"
             app:layout_constraintTop_toBottomOf="@id/tvURL" />
-
-        <TextView
-            android:id="@+id/tvPublishedAt"
-            style="@style/textViewPrimary"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@id/tvURLTolmage"
-            app:layout_constraintTop_toBottomOf="@id/tvURLTolmage" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

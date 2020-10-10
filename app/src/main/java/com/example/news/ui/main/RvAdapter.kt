@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.news.R
 import com.example.news.data.model.news.ArticleItem
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_news_article.*
 import kotlinx.android.synthetic.main.item_news.view.*
 
 class RvAdapter(private val listener: RecyclerviewListener) :
@@ -31,6 +33,9 @@ class RvHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         itemView.tvTitle.text = articleItem.title
         itemView.tvSource.text = articleItem.source?.name
+
+        val image = articleItem.urlToImage
+        Picasso.get().load(image).into(itemView.ivImage)
 
         itemView.setOnClickListener {
             listener.itemClicks(articleItem)

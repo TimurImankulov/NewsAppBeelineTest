@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.news"
-        minSdkVersion 26
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -54,6 +54,7 @@ dependencies {
     def paging_version = "2.1.2"
     implementation "androidx.paging:paging-runtime:$paging_version"
     implementation 'android.arch.paging:runtime:1.0.1'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 }
