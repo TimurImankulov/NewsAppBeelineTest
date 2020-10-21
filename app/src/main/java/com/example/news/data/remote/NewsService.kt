@@ -9,7 +9,6 @@ interface NewsService {
     suspend fun getNews(
         @Query("country") country: String,
         @Query("category") category: String,
-        @Query("apiKey") appId: String,
         @Query("page") page: Int,
         @Query("pageSize") pageSize: Int
     ): NewsModel

@@ -6,10 +6,14 @@ import com.example.news.BuildConfig.API_KEY_NEWS
 import com.example.news.NewsApp
 import com.example.news.data.model.news.ArticleItem
 import com.example.news.data.remote.RetrofitBuilder
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
 class NewsDataSource : PageKeyedDataSource<Int, ArticleItem>() {
+
+    //private val scope = CoroutineScope(Job())
 
     override fun loadInitial(
         params: LoadInitialParams<Int>,
@@ -18,9 +22,7 @@ class NewsDataSource : PageKeyedDataSource<Int, ArticleItem>() {
         GlobalScope.launch {
             runCatching {
                 val result = RetrofitBuilder.getService()?.getNews(
-                    "us", "business",
-                    API_KEY_NEWS, 1, 10
-                )
+                    "us", "business", 1, 10)
 
                 result?.articles?.map { it.page = 1 }
                 result?.articles?.let { NewsApp.getApp()?.getDb()?.getDao()?.add(it) }
@@ -37,9 +39,7 @@ class NewsDataSource : PageKeyedDataSource<Int, ArticleItem>() {
         GlobalScope.launch {
             runCatching {
                 val result = RetrofitBuilder.getService()?.getNews(
-                    "us", "business",
-                    API_KEY_NEWS, params.key, 10
-                )
+                    "us", "business", params.key, 10)
 
                 result?.articles?.map { it.page = params.key }
                 result?.articles?.let { NewsApp.getApp()?.getDb()?.getDao()?.add(it) }
